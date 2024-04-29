@@ -41,7 +41,8 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 Program to implement the the Logistic Regression Using Gradient Descent.
 Developed by: ROHITH PREM S
 RegisterNumber: 212223040172
-
+```
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -70,6 +71,8 @@ dataset
 X=dataset.iloc[:, :-1].values
 Y=dataset.iloc[:, -1].values
 Y
+```
+```
 theta=np.random.randn(X.shape[1])
 y=Y
 def sigmoid(z):
