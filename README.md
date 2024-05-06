@@ -8,45 +8,46 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1.Import Libraries: Import the necessary libraries - pandas, numpy, and matplotlib.pyplot.
+step 1.Start
 
-2.Load Dataset: Load the dataset using pd.read_csv.
+step 2.Import Libraries: Import the necessary libraries - pandas, numpy, and matplotlib.pyplot.
 
-3.Remove irrelevant columns (sl_no, salary).
+step 3.Load Dataset: Load the dataset using pd.read_csv.
 
-4.Convert categorical variables to numerical using cat.codes.
+step 4.Remove irrelevant columns (sl_no, salary).
 
-5.Separate features (X) and target variable (Y).
+step 5.Convert categorical variables to numerical using cat.codes.
 
-6.Define Sigmoid Function: Define the sigmoid function.
+step 6.Separate features (X) and target variable (Y).
 
-7.Define Loss Function: Define the loss function for logistic regression.
+step 7.Define Sigmoid Function: Define the sigmoid function.
 
-8.Define Gradient Descent Function: Implement the gradient descent algorithm to optimize the parameters.
+step 8.Define Loss Function: Define the loss function for logistic regression.
 
-9.Training Model: Initialize theta with random values, then perform gradient descent to minimize the loss and obtain the optimal parameters.
+step 9.Define Gradient Descent Function: Implement the gradient descent algorithm to optimize the parameters.
 
-10.Define Prediction Function: Implement a function to predict the output based on the learned parameters.
+step 10.Training Model: Initialize theta with random values, then perform gradient descent to minimize the loss and obtain the optimal parameters.
 
-11.Evaluate Accuracy: Calculate the accuracy of the model on the training data.
+step 11.Define Prediction Function: Implement a function to predict the output based on the learned parameters.
 
-12.Predict placement status for a new student with given feature values (xnew).
+step 12.Evaluate Accuracy: Calculate the accuracy of the model on the training data.
 
-13.Print Results: Print the predictions and the actual values (Y) for comparison.
+step 13.Predict placement status for a new student with given feature values (xnew).
 
-<br><br><br><br><br><br>
+step 14.Print Results: Print the predictions and the actual values (Y) for comparison.
 
+step 15.Stop.
 ## Program:
 ```
+/*
 Program to implement the the Logistic Regression Using Gradient Descent.
 Developed by: ROHITH PREM S
-RegisterNumber: 212223040172
-```
-```
+RegisterNumber:  212223040172
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-dataset=pd.read_csv("C:/Users/admin/Desktop/Placement_Data.csv")
+dataset=pd.read_csv("C:\sem-1\Placement_Data.csv")
 dataset
 dataset=dataset.drop('sl_no',axis=1)
 dataset=dataset.drop("salary",axis=1)
@@ -71,8 +72,6 @@ dataset
 X=dataset.iloc[:, :-1].values
 Y=dataset.iloc[:, -1].values
 Y
-```
-```
 theta=np.random.randn(X.shape[1])
 y=Y
 def sigmoid(z):
@@ -88,6 +87,8 @@ def gradient_descent (theta, X, y, alpha, num_iterations):
         theta -= alpha * gradient
     return theta
 theta =  gradient_descent(theta, X, y, alpha=0.01, num_iterations=1000)
+```
+```
 def predict(theta, X): 
     h = sigmoid(X.dot(theta))
     y_pred = np.where(h >= 0.5, 1, 0)
@@ -103,43 +104,25 @@ print(y_prednew)
 xnew = np.array([[0, 0, 0, 0, 0, 2, 8, 2, 0, 0, 1, 0]]) 
 y_prednew = predict(theta, xnew) 
 print(y_prednew)
+*/
 ```
-
 ## Output:
-
-### Dataset
-
-![Screenshot 2024-04-22 143340](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/ffcf0c40-dd74-4f1c-b1dd-ba1ed91c7660)
-
-### dataset.dtypes
-
-![Screenshot 2024-04-22 143349](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/977e46e8-e51b-49cc-b79b-4c3d358e167a)
-
-### dataset
-
-![Screenshot 2024-04-22 143355](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/53d4729a-21e7-4709-a842-d76cd166a4a2)
-
-### Y
-
-![Screenshot 2024-04-22 143400](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/4e236842-cc36-46d8-ba42-5edd381163b8)
-
-#### y_pred
-
-![Screenshot 2024-04-22 143406](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/0771f0ec-daec-489c-8080-b92975baa08f)
-
-#### Y
-
-![Screenshot 2024-04-22 143412](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/aa6470f8-fe69-42ce-84c2-80edfee53821)
-
-#### y_prednew
-
-![Screenshot 2024-04-22 143417](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/446673ff-6430-4d32-8ca2-5d3e99c5c130)
-
-#### y_prednew
-
-![Screenshot 2024-04-22 143421](https://github.com/rohithprem18/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/146315115/ee45f003-3aa4-4a8b-9b55-25d23611d52d)
-
-
+### dataset:
+![Screenshot 2024-04-22 143407](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/b759be5c-9ff7-44ab-ba18-0f95fef59a0a)
+### dataset.dtypes:
+![Screenshot 2024-04-22 143421](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/0ac77d57-1afe-49a7-aa8d-4414f90e9e92)
+### dataset:
+![Screenshot 2024-04-22 143450](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/730e6d8a-e533-43b2-9d7a-71428c7ab09a)
+### Y:
+![Screenshot 2024-04-22 143458](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/c5a2dc74-8f83-46f5-8c99-ca4fc9fba3c3)
+### y_pred:
+![Screenshot 2024-04-22 143507](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/6dce3b27-0063-401d-b7e4-5f8dfb501496)
+### Y:
+![Screenshot 2024-04-22 143511](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/cbc84213-853e-4afc-b9f9-20a48dcd8903)
+### y_prednew:
+![Screenshot 2024-04-22 143518](https://github.com/Aadithya2201/-Implementation-of-Logistic-Regression-Using-Gradient-Descent/assets/145917810/fcfeba87-3f2f-4d1d-b625-b63326f7da16)
+```
+```
 ## Result:
 Thus the program to implement the the Logistic Regression Using Gradient Descent is written and verified using python programming.
 
